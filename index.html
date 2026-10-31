@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>U13A Aurora Tigers • Video Breakdown & Analytics Hub</title>
   <link rel="icon" href="./tigers_logo.png">
   <link rel="manifest" href="./manifest.json">
@@ -4155,7 +4158,7 @@ P3 09:30 Penalty: #7 Opponent (Hooking, 2:00) - PP State"></textarea>
   </div>
 
   <!-- ================= MAIN APP VIEW ================= -->
-  <div id="main-content" class="w-full max-w-[1920px] 2xl:max-w-none mx-auto space-y-2.5 px-1 sm:px-2 md:px-3 pb-16 sm:pb-0" style="display: none;">
+  <div id="main-content" class="w-full max-w-[1920px] 2xl:max-w-none mx-auto space-y-2.5 px-1 sm:px-2 md:px-3 pb-16 sm:pb-0">
     
       <!-- ================= FIXED FLOATING EXIT FULLSCREEN BUTTON (PINNED FOR TV / FULLSCREEN MODE) ================= -->
   <button id="exit-fullscreen-btn" onclick="toggleTvPresentationMode()" class="hidden fixed top-4 right-4 z-[99999] px-4 py-2 rounded-2xl bg-rose-600/95 hover:bg-rose-500 text-white font-black text-xs shadow-2xl backdrop-blur-md border border-white/30 flex items-center gap-2 cursor-pointer transition active:scale-95 animate-in fade-in duration-200">
@@ -16624,9 +16627,9 @@ P3 09:30 Penalty: #7 Opponent (Hooking, 2:00) - PP State"></textarea>
     }
 
     function adjustLiveScore(team, delta) {
-      if (team === home) {
+      if (team === 'home') {
         liveGameSheetState.homeScore = Math.max(0, liveGameSheetState.homeScore + delta);
-        if (delta > 0 && typeof playArenaGoalHornSound === function) {
+        if (delta > 0 && typeof playArenaGoalHornSound === 'function') {
           playArenaGoalHornSound();
           showToast(`🚨 GOAL AURORA TIGERS! (${liveGameSheetState.homeScore} - ${liveGameSheetState.awayScore})`);
         }
@@ -16641,7 +16644,7 @@ P3 09:30 Penalty: #7 Opponent (Hooking, 2:00) - PP State"></textarea>
 
     function setLivePeriod(p) {
       liveGameSheetState.period = p;
-      if (p === FINAL) {
+      if (p === 'FINAL') {
         liveGameSheetState.running = false;
         liveGameSheetState.clockSec = 0;
       }
